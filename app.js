@@ -7,10 +7,11 @@
 
   init.$inject = ['$scope'];
   function init($scope){
+    $scope.string = "";
 
     $scope.checkIfToomuch = function () {
       var items = $scope.string.split(',');
-      if (items.length==1 && items[0]==""){
+      if ($scope.string==""){
         $scope.message = "Please enter data first";
       } else if (items.length <= 3) {
         $scope.message = "Enjoy!";
